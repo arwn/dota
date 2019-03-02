@@ -125,7 +125,7 @@ END{
 	print "{";
 	printf "\"matchDate\" : \"%s\",\n", matchDate
 	printf "\"gameDuration\": %d,\n", gameDuration
-	printf "\"runTime\": %d,\n", beginTime - systime()
+	printf "\"runTime\": %d,\n", systime() - beginTime1
 	printf "\"winner\" : \"%s\",\n", winner
 	print "\"numPlayersGood\" : " numPlayersGood ","
 	print "\"numPlayersBad\" : " numPlayersBad ","
