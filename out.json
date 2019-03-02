@@ -116,7 +116,7 @@
 		"supportGold": 0
 	}},
 "badguys" : {
-	"npc_dota_hero_drow_ranger(6)" : {
+	"npc_dota_hero_kunkka(23)" : {
 		"items": [180, 232, 254, 108, 100, 58, 0, 0, 0],
 		"lastHit": 93,
 		"deny": 24,
@@ -138,7 +138,7 @@
 		"claimedFarm": 7012,
 		"supportGold": 50
 	},
-	"npc_dota_hero_kunkka(23)" : {
+	"npc_dota_hero_zuus(22)" : {
 		"items": [63, 252, 112, 147, 114, 160, 0, 0, 0],
 		"lastHit": 248,
 		"deny": 28,
@@ -160,7 +160,7 @@
 		"claimedFarm": 13564,
 		"supportGold": 0
 	},
-	"npc_dota_hero_zuus(22)" : {
+	"npc_dota_hero_nevermore(11)" : {
 		"items": [145, 145, 63, 145, 145, 11, 0, 0, 0],
 		"lastHit": 192,
 		"deny": 7,
@@ -182,7 +182,7 @@
 		"claimedFarm": 10529,
 		"supportGold": 0
 	},
-	"npc_dota_hero_earthshaker(7)" : {
+	"" : {
 		"items": [214, 232, 254, 108, 116, 0, 0, 0, 0],
 		"lastHit": 113,
 		"deny": 21,
@@ -204,7 +204,7 @@
 		"claimedFarm": 9716,
 		"supportGold": 0
 	},
-	"npc_dota_hero_nevermore(11)" : {
+	"" : {
 		"items": [180, 232, 108, 254, 100, 58, 0, 0, 0],
 		"lastHit": 113,
 		"deny": 23,

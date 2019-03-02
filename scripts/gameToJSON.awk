@@ -24,13 +24,13 @@ BEGIN{
 }
 {
 	# save radiant heros to goodguys[]
-	if(mode == "goodguys" && $0 ~ /npc_dota_hero/){
+	if(mode == "goodguys" && $0 ~ /npc_dota_hero.*\([0-9].)/){
 		goodguys[++i] = $3;
 		if(i == 5){
 			mode = "badguys"
 			i = 0;
 		}
-	}else if(mode == "badguys" && $0 ~ /npc_dota_hero/){
+	}else if(mode == "badguys" && $0 ~ /npc_dota_hero.*\([0-9].)/){
 		badguys[++i] = $3;
 		if(i == 5){
 			mode = 0;
