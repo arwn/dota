@@ -1,4 +1,5 @@
 BEGIN{
+	mode = "goodguys"
 	items = 1;
 	lastHit = 2;
 	deny = 3;
@@ -23,26 +24,21 @@ BEGIN{
 }
 {
 	# save radiant heros to goodguys[]
-	if(mode == "goodguys"){
-		if(++goodguysCount == 5){
+	if(mode == "goodguys" && $0 ~ /npc_dota_hero/){
+		goodguys[++i] = $3;
+		if(i == 5){
+			mode = "badguys"
+			i = 0;
+		}
+	}else if(mode == "badguys" && $0 ~ /npc_dota_hero/){
+		badguys[++i] = $3;
+		if(i == 5){
 			mode = 0;
-		};
-		goodguys[i] = $3;
-		i++;
-	}
-	if($0 ~ /^selecting radiant$/){mode = "goodguys"; i = 1};
-
-	# save dire heros to badguys[]
-	if(mode == "badguys"){
-		if(++badguysCount == 5){
-			mode = 0;
-		};
-		badguys[i] = $3;
-		i++;
+			i = 0;
+		}
 	}
 
 	# other
-	if($0 ~ /^selecting dire$/){mode = "badguys"; i = 1};
 	if($0 ~ /Match signout:  duration[0-9]*/){gameDuration = $5};
 	if($0 ~ /good guys win = [01]/){
 		if($11 == 1){winner = "goodguys"}
