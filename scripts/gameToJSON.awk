@@ -1,5 +1,6 @@
 BEGIN{
-	mode = "goodguys"
+	beginTime = systime();
+	mode = "goodguys";
 	items = 1;
 	lastHit = 2;
 	deny = 3;
@@ -24,13 +25,13 @@ BEGIN{
 }
 {
 	# save radiant heros to goodguys[]
-	if(mode == "goodguys" && $0 ~ /npc_dota_hero.*\([0-9].)/){
+	if(mode == "goodguys" && $0 ~ /npc_dota_hero.*\([0-9]/){
 		goodguys[++i] = $3;
 		if(i == 5){
 			mode = "badguys"
 			i = 0;
 		}
-	}else if(mode == "badguys" && $0 ~ /npc_dota_hero.*\([0-9].)/){
+	}else if(mode == "badguys" && $0 ~ /npc_dota_hero.*\([0-9]/){
 		badguys[++i] = $3;
 		if(i == 5){
 			mode = 0;
@@ -124,6 +125,7 @@ END{
 	print "{";
 	printf "\"matchDate\" : \"%s\",\n", matchDate
 	printf "\"gameDuration\": %d,\n", gameDuration
+	printf "\"runTime\": %d,\n", beginTime - systime()
 	printf "\"winner\" : \"%s\",\n", winner
 	print "\"numPlayersGood\" : " numPlayersGood ","
 	print "\"numPlayersBad\" : " numPlayersBad ","
